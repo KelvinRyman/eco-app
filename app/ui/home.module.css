@@ -1,0 +1,9 @@
+.shape {
+    height: 0;
+    width: 0;
+    border-bottom: 30px solid black;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+
+/* In Tailwind: "flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52" */
