@@ -1,4 +1,6 @@
 import { sql } from '@vercel/postgres';
+// sql是来自@versel的函数，允许您查询数据库
+// 按照惯例为了更轻松地导航组件，数据查询操作都放置在data.ts中，由其他页面导入
 import {
   CustomerField,
   CustomersTableType,
@@ -60,6 +62,7 @@ export async function fetchCardData() {
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
 
+    // 通过并行执行多个查询，可以加快页面加载速度
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
